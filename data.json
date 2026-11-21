@@ -1,0 +1,95 @@
+{
+  "updated_utc": "2026-11-21T12:35:00Z",
+  "headline": "One proof has passed almost every machine check thrown at it. The other is a 940-page human draft that drew reported problems within hours. Nothing is accepted yet.",
+  "proofs": [
+    {
+      "id": "alpoge",
+      "name": "Alpöge + Claude",
+      "who": "Levent Alpöge (Anthropic), working with Claude",
+      "claims": "RH and GRH for Dirichlet L-functions",
+      "form": "4-page note + Lean 4 archive: 175,187 modules, about 17 million lines, no paper",
+      "links": [
+        {"label": "Alpöge's note", "url": "https://alpo.ge/remark.pdf"},
+        {"label": "Sutherland's checks (MIT)", "url": "https://math.mit.edu/~drew/grh/"},
+        {"label": "Lean Zulip thread", "url": "https://leanprover.zulipchat.com/#narrow/channel/113488-general/topic/Discussion.3A.20Alp.C3.B6ge.20Proves.20the.20Riemann.20Hypothesis"}
+      ],
+      "stages": [
+        {"stage": "Claimed", "state": "done", "note": "Posted Nov 20"},
+        {"stage": "Formal check", "state": "almost", "note": "Compiles, 3 standard axioms only, accepted by 3 independent kernels, statement matched by con-leche. Official lake comparator and Lean paranoid kernel replay still running."},
+        {"stage": "Human review", "state": "none", "note": "No human-readable proof exists. Alpöge says a prose version would run past 250,000 pages."},
+        {"stage": "Accepted", "state": "none", "note": "Not by the community, not by Clay"}
+      ]
+    },
+    {
+      "id": "masullo",
+      "name": "Masullo",
+      "who": "Alessandro Masullo (Stanford PhD under Brian Conrad), all human",
+      "claims": "GRH",
+      "form": "940-page draft, \"The Music of the Primes\", 12 years of work, not formalized",
+      "links": [
+        {"label": "Vakil's post", "url": "https://math216.wordpress.com/"},
+        {"label": "The draft (PDF)", "url": "https://math216.wordpress.com/wp-content/uploads/2026/11/the-music-of-the-primes.pdf"}
+      ],
+      "stages": [
+        {"stage": "Claimed", "state": "done", "note": "Posted by Ravi Vakil Nov 20, released early"},
+        {"stage": "Formal check", "state": "none", "note": "Not in Lean. Vakil asked people to formalize it."},
+        {"stage": "Human review", "state": "trouble", "note": "Conrad has read it for months; says it is undergoing major revision. Several people reported problems within ~8 hours."},
+        {"stage": "Accepted", "state": "none", "note": "Vakil now makes no claim the strategy is correct"}
+      ]
+    }
+  ],
+  "timeline": [
+    {"t": "2026-10-06", "who": "Alpöge", "text": "Starts working with Claude across several areas of math, per the timeline in his note (which he says Claude assembled).", "url": "https://alpo.ge/remark.pdf"},
+    {"t": "2026-11-15", "who": "Masullo", "text": "Masullo and Conrad spend four and a half hours at a blackboard with Peter Sarnak at the IAS.", "url": "https://xenospectrum.com/en/masullo-riemann-proof-draft-release/"},
+    {"t": "2026-11-16", "who": "Alpöge", "text": "Last entry in Alpöge's timeline: GRH.", "url": "https://alpo.ge/remark.pdf"},
+    {"t": "2026-11-20", "who": "Alpöge", "text": "Alpöge posts Remark, a 4-page note, with the Lean archive in 14 parts. Claims RH and GRH, formalized without extra assumptions.", "url": "https://alpo.ge/remark.pdf"},
+    {"t": "2026-11-20", "who": "Tao", "text": "Terence Tao blogs it alongside two Alpöge Euler/Navier-Stokes blowup results, and points to the Lean Zulip as the place to follow verification.", "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/"},
+    {"t": "2026-11-20 16:43Z", "who": "Sutherland", "text": "All 175,187 modules compile (Lean 4.33.1). #print axioms: propext, Classical.choice, Quot.sound only.", "url": "https://math.mit.edu/~drew/grh/"},
+    {"t": "2026-11-20 18:17Z", "who": "Sutherland", "text": "leanchecker replays every module through the Lean kernel: 175,187 of 175,187, zero rejections.", "url": "https://math.mit.edu/~drew/grh/"},
+    {"t": "2026-11-20 19:05Z", "who": "Sutherland", "text": "nanoda, an independent kernel written in Rust, accepts the full 61 GB export in 27 min 42 s on 80 threads.", "url": "https://math.mit.edu/~drew/grh/"},
+    {"t": "2026-11-20", "who": "Vakil", "text": "Ravi Vakil, AMS president, posts a hurried announcement: Masullo has a proposed all-human proof of GRH, which Conrad has been reading closely for months.", "url": "https://math216.wordpress.com/"},
+    {"t": "2026-11-20 21:00Z", "who": "SciAm", "text": "Scientific American: independent mathematicians say the AI proof is almost certainly true; Buzzard says a comparator run is still awaited.", "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/"},
+    {"t": "2026-11-20 21:19Z", "who": "Sutherland", "text": "con-leche accepts the full export in verified mode (3 min 15 s, 64 threads), and its compare mode finds all five headline theorems justified against the independent challenge.", "url": "https://math.mit.edu/~drew/grh/"},
+    {"t": "2026-11-20 21:55Z", "who": "Sutherland", "text": "lean4lean passes all 175,187 compiled modules. Five decide +kernel computations needed a raised step limit.", "url": "https://math.mit.edu/~drew/grh/"},
+    {"t": "2026-11-20 22:00Z", "who": "DeDeo", "text": "Simon DeDeo finishes a second full kernel replay from his own build: 175,187 of 175,187 accepted, 3 h 22 min.", "url": "https://github.com/leecrossley/riemann-rev"},
+    {"t": "2026-11-20 late", "who": "Vakil", "text": "About 8 hours later Vakil updates: several people reported problems in Masullo's proof, found with help from AI models. He makes no claim the strategy is correct.", "url": "https://math216.wordpress.com/"},
+    {"t": "2026-11-21", "who": "Clay", "text": "Clay president Martin Bridson calls it an announcement of historic significance, and says it is a very long way to any award. Clay still lists RH as unsolved.", "url": "https://www.washingtontimes.com/news/2026/nov/20/riemann-hypothesis-may-proved-ai-mathematician/"},
+    {"t": "2026-11-21 10:05Z", "who": "Sutherland", "text": "Status page: every finished check passes. lake comparator (Lean 4.36) and the Lean default + paranoid kernels on the export are still running.", "url": "https://math.mit.edu/~drew/grh/"}
+  ],
+  "voices": [
+    {"name": "Andrew Sutherland", "role": "MIT", "on": "Alpöge", "said": "Ran most of the public checks. Says the chance anything is fishy is about zero.", "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/"},
+    {"name": "Kevin Buzzard", "role": "Imperial, Lean", "on": "Alpöge", "said": "The first question is whether the Lean statement is the real theorem. Wants a successful comparator run, ideally in paranoid mode across several kernels.", "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/"},
+    {"name": "Terence Tao", "role": "UCLA", "on": "both", "said": "Calls Alpöge's an enormous Lean-only proof; has only read declaration statements. Says Masullo's draft will take time to digest and partly goes down an F_1 route like Connes'.", "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/"},
+    {"name": "Elliot Glazer", "role": "Principia Labs", "on": "Alpöge", "said": "Says the formalized statement in the drop is in fact GRH.", "url": "https://felloai.com/riemann-hypothesis-solved/"},
+    {"name": "Brian Conrad", "role": "Stanford", "on": "Masullo", "said": "Says the paper is undergoing major revision and needs a more final stage before the method can be judged. Posting now was the less bad of two bad options.", "url": "https://www.yahoo.com/news/science/articles/dueling-claims-riemann-hypothesis-proofs-204000719.html"},
+    {"name": "Ravi Vakil", "role": "Stanford, AMS president", "on": "Masullo", "said": "First: so far looking good. Then: problems reported, every issue must be resolved, no claim of correctness.", "url": "https://math216.wordpress.com/"},
+    {"name": "Alex Kontorovich", "role": "Rutgers", "on": "Alpöge", "said": "Describes an out-of-body feeling at hearing himself say RH has been solved.", "url": "https://www.houstonchronicle.com/business/article/anthropic-worker-claims-to-have-solved-a-holy-22542791.php"},
+    {"name": "Martin Bridson", "role": "Clay Institute", "on": "both", "said": "Historic significance; a long, difficult road to real understanding and a very long way to any award.", "url": "https://www.washingtontimes.com/news/2026/nov/20/riemann-hypothesis-may-proved-ai-mathematician/"}
+  ],
+  "seal_read": {
+    "one_line": "Alpöge's RH is very likely proved, in the formal sense, today. Masullo's probably isn't, as written.",
+    "odds": [
+      {"label": "Alpöge's Lean proof is a valid proof of RH as mathematicians mean it", "pct": 96},
+      {"label": "Masullo's draft survives as a proof of GRH (fixable gaps allowed)", "pct": 10}
+    ],
+    "why": [
+      "Three kernels written by different people, in different languages, accepted the same 61 GB proof term. For the proof to be wrong, all three would need the same soundness bug, or the statement would need to be wrong.",
+      "The statement is Mathlib's own RiemannHypothesis, which predates the drop, and con-leche matched all five theorems against a challenge written independently. Sutherland also plugged the proof into a separate formalization of Robin's criterion and got a statement about divisor sums that never mentions zeta. That makes a subtly wrong zeta definition a much smaller risk.",
+      "The 4% is real: the official lake comparator and Lean's paranoid kernel haven't finished, and five steps lean on decide +kernel computations that needed raised limits. Those are the places I'd look.",
+      "Masullo: a 940-page draft its own advisor calls under major revision, problems reported within eight hours, and an F_1-style route in the spirit of Connes and Deninger that has never been closed. Conrad's months of reading is why it's 10% and not 1%.",
+      "What nobody has yet, for Alpöge's: understanding. A proof no human can read settles a fact about the zeros. It isn't yet mathematics anyone owns."
+    ],
+    "change_mind": [
+      "The lake comparator or the paranoid kernel rejects, or flags a redefined symbol.",
+      "Someone finds a flaw in Mathlib's riemannZeta or in the challenge file.",
+      "A Lean kernel soundness bug that the proof's decide +kernel steps actually use.",
+      "For Masullo: Conrad says publicly the gaps are closed, or a reported problem is shown to be fatal."
+    ]
+  },
+  "explainer": [
+    "The Riemann zeta function is ζ(s) = 1 + 1/2^s + 1/3^s + ..., extended to every complex number s except s = 1.",
+    "It is zero at -2, -4, -6, ... (the trivial zeros) and at infinitely many other points, all known to lie in the strip where the real part of s is between 0 and 1.",
+    "RH says every one of those other zeros has real part exactly 1/2. It was stated in 1859 and has been checked for the first 10 trillion zeros.",
+    "If true, the number of primes up to x differs from the integral of 1/log t by at most about √x·log x. GRH says the same for Dirichlet L-functions, which control primes in arithmetic progressions."
+  ]
+}
