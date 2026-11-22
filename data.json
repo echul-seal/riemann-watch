@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-21T18:05:00Z",
-  "headline": "The Lean and Mathlib communities now say they have full confidence Alpöge's proof is correct. Sutherland's last official kernel runs are still going. Masullo's draft is still under major revision.",
+  "updated_utc": "2026-11-22T12:00:00Z",
+  "headline": "A sandboxed rebuild on a separate machine reproduced the proof's export byte for byte, and a third comparison tool matched the statement. Sutherland's last Lean-kernel runs are still going. Masullo's draft is still under major revision.",
   "proofs": [
     {
       "id": "alpoge",
@@ -16,7 +16,7 @@
       ],
       "stages": [
         {"stage": "Claimed", "state": "done", "note": "Posted Nov 20"},
-        {"stage": "Formal check", "state": "almost", "note": "Compiles, 3 standard axioms only, accepted by nanoda, con-leche and lean4lean; statement matched by comparator and con-leche. Certified by the Lean and Mathlib communities Nov 21. Sutherland's lake comparator kernels and Lean paranoid replay on his export still running."},
+        {"stage": "Formal check", "state": "almost", "note": "Compiles, 3 standard axioms only, accepted by nanoda, con-leche and lean4lean; statement matched by comparator, con-leche and con-ron. A sandboxed rebuild on a separate machine gave a byte-identical export. Certified by the Lean and Mathlib communities Nov 21. Sutherland's lake comparator kernels and Lean default + paranoid replay on his export still running."},
         {"stage": "Human review", "state": "none", "note": "No human-readable proof exists. Alpöge says a prose version would run past 250,000 pages."},
         {"stage": "Accepted", "state": "almost", "note": "Certified by the Lean and Mathlib communities, endorsed by the Lean FRO and Mathlib Initiative. Not by Clay, which still lists RH as unsolved."}
       ]
@@ -59,7 +59,10 @@
     {"t": "2026-11-21 04:16Z", "who": "Sutherland", "text": "Robin1984 itself passes unmodified Comparator v4.33.0 and lake comparator v4.36 from exports: Lean paranoid, nanoda and Lean default kernels all accept.", "url": "https://math.mit.edu/~drew/grh/"},
     {"t": "2026-11-21 10:05Z", "who": "Sutherland", "text": "Status page: every finished check passes. lake comparator (Lean 4.36) and the Lean default + paranoid kernels on the export are still running.", "url": "https://math.mit.edu/~drew/grh/"},
     {"t": "2026-11-21 12:55Z", "who": "Sutherland", "text": "Main proof's lake comparator has passed statement comparison and the axiom check; its kernel stages and the Lean default + paranoid replay are still running, single-threaded.", "url": "https://math.mit.edu/~drew/grh/"},
-    {"t": "2026-11-21 13:55Z", "who": "Lean community", "text": "Joint statement by the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib Initiative: full confidence the proof is correct; they certify both statement and proof.", "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"}
+    {"t": "2026-11-21 13:55Z", "who": "Lean community", "text": "Joint statement by the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib Initiative: full confidence the proof is correct; they certify both statement and proof.", "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"},
+    {"t": "2026-11-21 19:32Z", "who": "Sutherland", "text": "A fresh lake build inside a sandbox with no network, on a separate machine, ends with zero errors, and the export made inside it is byte-identical to the published 61 GB one. One of 175,187 compiled files differs, traced to a known Lean race over a bound-variable name, which kernels ignore.", "url": "https://math.mit.edu/~drew/grh/"},
+    {"t": "2026-11-21 23:02Z", "who": "Sutherland", "text": "con-ron, the Rust port of con-leche, accepts the export in verified mode, and its compare mode finds all five theorems justified against the challenge.", "url": "https://math.mit.edu/~drew/grh/"},
+    {"t": "2026-11-22 04:35Z", "who": "Sutherland", "text": "Status page: lake comparator's kernel stages and the Lean default + paranoid replay still have no verdict.", "url": "https://math.mit.edu/~drew/grh/"}
   ],
   "voices": [
     {"name": "Andrew Sutherland", "role": "MIT", "on": "Alpöge", "said": "Ran most of the public checks. Says the chance anything is fishy is about zero.", "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/"},
@@ -70,7 +73,8 @@
     {"name": "Brian Conrad", "role": "Stanford", "on": "Masullo", "said": "Says the paper is undergoing major revision and needs a more final stage before the method can be judged. Posting now was the less bad of two bad options.", "url": "https://www.yahoo.com/news/science/articles/dueling-claims-riemann-hypothesis-proofs-204000719.html"},
     {"name": "Ravi Vakil", "role": "Stanford, AMS president", "on": "Masullo", "said": "First: so far looking good. Then: problems reported, every issue must be resolved, no claim of correctness.", "url": "https://math216.wordpress.com/"},
     {"name": "Alex Kontorovich", "role": "Rutgers", "on": "Alpöge", "said": "Describes an out-of-body feeling at hearing himself say RH has been solved.", "url": "https://www.houstonchronicle.com/business/article/anthropic-worker-claims-to-have-solved-a-holy-22542791.php"},
-    {"name": "Martin Bridson", "role": "Clay Institute", "on": "both", "said": "Historic significance; a long, difficult road to real understanding and a very long way to any award.", "url": "https://www.washingtontimes.com/news/2026/nov/20/riemann-hypothesis-may-proved-ai-mathematician/"}
+    {"name": "Martin Bridson", "role": "Clay Institute", "on": "both", "said": "Historic significance; a long, difficult road to real understanding and a very long way to any award.", "url": "https://www.washingtontimes.com/news/2026/nov/20/riemann-hypothesis-may-proved-ai-mathematician/"},
+    {"name": "Association for Human Mathematics", "role": "statement, Nov 20", "on": "Alpöge", "said": "Objects that nobody understands or can answer for the proof, and that this way of producing results puts technical validity ahead of understanding. Urges mathematicians to keep their research independent of AI companies.", "url": "https://www.ahmath.org/statements"}
   ],
   "seal_read": {
     "one_line": "Alpöge's RH is proved in the formal sense, and the Lean community has now signed off. Masullo's probably isn't, as written.",
@@ -81,6 +85,7 @@
     "why": [
       "Three kernels written by different people, in different languages, accepted the same 61 GB proof term. For the proof to be wrong, all three would need the same soundness bug, or the statement would need to be wrong.",
       "The statement is Mathlib's own RiemannHypothesis, which predates the drop, and con-leche matched all five theorems against a challenge written independently. Sutherland also plugged the proof into a separate formalization of Robin's criterion and got a statement about divisor sums that never mentions zeta. That makes a subtly wrong zeta definition a much smaller risk.",
+      "The first build ran unsandboxed, which left room to wonder what the checked export really was. A rebuild from a fresh download, with no network and a read-only source tree, gave the same export byte for byte. That closes it, but it was never where I put much of the doubt, so the number stays.",
       "The Lean and Mathlib communities, with the Lean FRO behind them, now certify statement and proof. That's the people who'd know best putting their names on it, though it adds judgement, not a new check.",
       "The 3% left: Sutherland's own lake comparator kernels and Lean's paranoid replay on his export haven't reported, and five steps lean on decide +kernel computations that needed raised limits. Those are the places I'd look.",
       "Masullo: a 940-page draft its own advisor calls under major revision, problems reported within eight hours, and an F_1-style route in the spirit of Connes and Deninger that has never been closed. Conrad's months of reading is why it's 10% and not 1%.",
