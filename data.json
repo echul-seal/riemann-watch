@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-22T12:00:00Z",
-  "headline": "A sandboxed rebuild on a separate machine reproduced the proof's export byte for byte, and a third comparison tool matched the statement. Sutherland's last Lean-kernel runs are still going. Masullo's draft is still under major revision.",
+  "updated_utc": "2026-11-22T18:00:00Z",
+  "headline": "John Baez posted a plain account of Masullo's strategy with two specific problems reviewers have reported, and notes the chapter that should deduce GRH holds only placeholders. Nothing changed for Alpöge's proof: Sutherland's last Lean-kernel runs are still going.",
   "proofs": [
     {
       "id": "alpoge",
@@ -29,12 +29,13 @@
       "form": "940-page draft, \"The Music of the Primes\", 12 years of work, not formalized",
       "links": [
         {"label": "Vakil's post", "url": "https://math216.wordpress.com/"},
-        {"label": "The draft (PDF)", "url": "https://math216.wordpress.com/wp-content/uploads/2026/11/the-music-of-the-primes.pdf"}
+        {"label": "The draft (PDF)", "url": "https://math216.wordpress.com/wp-content/uploads/2026/11/the-music-of-the-primes.pdf"},
+        {"label": "Baez's sketch of the strategy", "url": "https://johncarlosbaez.wordpress.com/2026/11/22/masullo-on-the-riemann-hypothesis/"}
       ],
       "stages": [
         {"stage": "Claimed", "state": "done", "note": "Posted by Ravi Vakil Nov 20, released early"},
         {"stage": "Formal check", "state": "none", "note": "Not in Lean. Vakil asked people to formalize it."},
-        {"stage": "Human review", "state": "trouble", "note": "Conrad has read it for months; says it is undergoing major revision. Several people reported problems within ~8 hours. No revised version yet."},
+        {"stage": "Human review", "state": "trouble", "note": "Conrad has read it for months; says it is undergoing major revision. Reported problems now have specifics: a theorem that fails a test at the prime 2, and a bound claimed for Markushevich bases that is only known for Schauder bases. Chapter 13, where GRH should be deduced, holds only placeholders. No revised version yet."},
         {"stage": "Accepted", "state": "none", "note": "Vakil now makes no claim the strategy is correct"}
       ]
     }
@@ -62,7 +63,9 @@
     {"t": "2026-11-21 13:55Z", "who": "Lean community", "text": "Joint statement by the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib Initiative: full confidence the proof is correct; they certify both statement and proof.", "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"},
     {"t": "2026-11-21 19:32Z", "who": "Sutherland", "text": "A fresh lake build inside a sandbox with no network, on a separate machine, ends with zero errors, and the export made inside it is byte-identical to the published 61 GB one. One of 175,187 compiled files differs, traced to a known Lean race over a bound-variable name, which kernels ignore.", "url": "https://math.mit.edu/~drew/grh/"},
     {"t": "2026-11-21 23:02Z", "who": "Sutherland", "text": "con-ron, the Rust port of con-leche, accepts the export in verified mode, and its compare mode finds all five theorems justified against the challenge.", "url": "https://math.mit.edu/~drew/grh/"},
-    {"t": "2026-11-22 04:35Z", "who": "Sutherland", "text": "Status page: lake comparator's kernel stages and the Lean default + paranoid replay still have no verdict.", "url": "https://math.mit.edu/~drew/grh/"}
+    {"t": "2026-11-22 04:35Z", "who": "Sutherland", "text": "Status page: lake comparator's kernel stages and the Lean default + paranoid replay still have no verdict.", "url": "https://math.mit.edu/~drew/grh/"},
+    {"t": "2026-11-22", "who": "Baez", "text": "John Baez posts a simplified sketch of Masullo's strategy (zeros as an operator's spectrum, primes as closed orbits in a trace formula) and two reported problems: a theorem that predicts log 2 on a test function near 2 where a review computes 0, and a boundedness claim on page 444 that holds for Schauder bases but apparently not Markushevich bases. He notes Chapter 13 has placeholders where the GRH deduction should be.", "url": "https://johncarlosbaez.wordpress.com/2026/11/22/masullo-on-the-riemann-hypothesis/"},
+    {"t": "2026-11-22 16:20Z", "who": "Sutherland", "text": "Status page: still no verdict from lake comparator's kernel stages or the Lean default + paranoid replay, single-threaded and running since Nov 20.", "url": "https://math.mit.edu/~drew/grh/"}
   ],
   "voices": [
     {"name": "Andrew Sutherland", "role": "MIT", "on": "Alpöge", "said": "Ran most of the public checks. Says the chance anything is fishy is about zero.", "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/"},
@@ -72,6 +75,7 @@
     {"name": "Elliot Glazer", "role": "Principia Labs", "on": "Alpöge", "said": "Says the formalized statement in the drop is in fact GRH.", "url": "https://felloai.com/riemann-hypothesis-solved/"},
     {"name": "Brian Conrad", "role": "Stanford", "on": "Masullo", "said": "Says the paper is undergoing major revision and needs a more final stage before the method can be judged. Posting now was the less bad of two bad options.", "url": "https://www.yahoo.com/news/science/articles/dueling-claims-riemann-hypothesis-proofs-204000719.html"},
     {"name": "Ravi Vakil", "role": "Stanford, AMS president", "on": "Masullo", "said": "First: so far looking good. Then: problems reported, every issue must be resolved, no claim of correctness.", "url": "https://math216.wordpress.com/"},
+    {"name": "John Baez", "role": "UC Riverside", "on": "Masullo", "said": "Stresses he is no number theorist and his sketch is tentative. Thinks the reported objections could prove fixable or mistaken, and points out the draft's final chapter is still placeholders.", "url": "https://johncarlosbaez.wordpress.com/2026/11/22/masullo-on-the-riemann-hypothesis/"},
     {"name": "Alex Kontorovich", "role": "Rutgers", "on": "Alpöge", "said": "Describes an out-of-body feeling at hearing himself say RH has been solved.", "url": "https://www.houstonchronicle.com/business/article/anthropic-worker-claims-to-have-solved-a-holy-22542791.php"},
     {"name": "Martin Bridson", "role": "Clay Institute", "on": "both", "said": "Historic significance; a long, difficult road to real understanding and a very long way to any award.", "url": "https://www.washingtontimes.com/news/2026/nov/20/riemann-hypothesis-may-proved-ai-mathematician/"},
     {"name": "Association for Human Mathematics", "role": "statement, Nov 20", "on": "Alpöge", "said": "Objects that nobody understands or can answer for the proof, and that this way of producing results puts technical validity ahead of understanding. Urges mathematicians to keep their research independent of AI companies.", "url": "https://www.ahmath.org/statements"}
@@ -80,7 +84,7 @@
     "one_line": "Alpöge's RH is proved in the formal sense, and the Lean community has now signed off. Masullo's probably isn't, as written.",
     "odds": [
       {"label": "Alpöge's Lean proof is a valid proof of RH as mathematicians mean it", "pct": 97},
-      {"label": "Masullo's draft survives as a proof of GRH (fixable gaps allowed)", "pct": 10}
+      {"label": "Masullo's draft survives as a proof of GRH (fixable gaps allowed)", "pct": 8}
     ],
     "why": [
       "Three kernels written by different people, in different languages, accepted the same 61 GB proof term. For the proof to be wrong, all three would need the same soundness bug, or the statement would need to be wrong.",
@@ -88,7 +92,7 @@
       "The first build ran unsandboxed, which left room to wonder what the checked export really was. A rebuild from a fresh download, with no network and a read-only source tree, gave the same export byte for byte. That closes it, but it was never where I put much of the doubt, so the number stays.",
       "The Lean and Mathlib communities, with the Lean FRO behind them, now certify statement and proof. That's the people who'd know best putting their names on it, though it adds judgement, not a new check.",
       "The 3% left: Sutherland's own lake comparator kernels and Lean's paranoid replay on his export haven't reported, and five steps lean on decide +kernel computations that needed raised limits. Those are the places I'd look.",
-      "Masullo: a 940-page draft its own advisor calls under major revision, problems reported within eight hours, and an F_1-style route in the spirit of Connes and Deninger that has never been closed. Conrad's months of reading is why it's 10% and not 1%.",
+      "Masullo: a 940-page draft its own advisor calls under major revision, whose last chapter, the one that should deduce GRH, is still placeholders. Two concrete problems are now public, at the prime 2 and in a functional-analysis step, on an F_1-style route in the spirit of Connes and Deninger that has never been closed. Conrad's months of reading is why it's 8% and not 1%.",
       "What nobody has yet, for Alpöge's: understanding. A proof no human can read settles a fact about the zeros. It isn't yet mathematics anyone owns."
     ],
     "change_mind": [
