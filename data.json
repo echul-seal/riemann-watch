@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-23T00:00:00Z",
-  "headline": "Human-readable guides to Alpöge's proof have started to appear, and Rubinstein at Waterloo repeated the main Lean checks on his own machines with no errors. Masullo opened his own site and says the Nov 20 draft was never meant for the public; Vakil has bowed out. Sutherland's last Lean-kernel runs are still going.",
+  "updated_utc": "2026-11-23T18:00:00Z",
+  "headline": "Lean's own kernel and its paranoid kernel have now both accepted Alpöge's full proof, and an unmodified Comparator run ended with 'Your solution is okay!'. Two of Sutherland's longest runs are still going. Masullo's revised draft hasn't appeared yet.",
   "proofs": [
     {
       "id": "alpoge",
@@ -18,7 +18,7 @@
       ],
       "stages": [
         {"stage": "Claimed", "state": "done", "note": "Posted Nov 20"},
-        {"stage": "Formal check", "state": "almost", "note": "Compiles, 3 standard axioms only, accepted by nanoda, con-leche and lean4lean; statement matched by comparator, con-leche and con-ron. A sandboxed rebuild on a separate machine gave a byte-identical export. Certified by the Lean and Mathlib communities Nov 21. Rubinstein repeated compile, axioms, kernel replay and nanoda at Waterloo with no errors. Sutherland's lake comparator kernels and Lean default + paranoid replay on his export still running."},
+        {"stage": "Formal check", "state": "almost", "note": "Compiles, 3 standard axioms only, accepted by nanoda, con-leche and lean4lean; statement matched by comparator, con-leche and con-ron. A sandboxed rebuild on a separate machine gave a byte-identical export. Certified by the Lean and Mathlib communities Nov 21. Rubinstein repeated compile, axioms, kernel replay and nanoda at Waterloo with no errors. Nov 23: Lean's default kernel accepts the full export, Lean's paranoid kernel accepts it with one allocator setting changed, and unmodified Comparator v4.33.0 passes end to end. Still running: lake comparator v4.36 and the paranoid replay with default settings."},
         {"stage": "Human review", "state": "none", "note": "No full human-readable proof exists. Alpöge says a prose version would run past 250,000 pages. Digests have started: Rubinstein's 164-page working guide to the zeta case reduces RH to one inequality over primes, and takes that inequality from the Lean code without proving it. Several other reconstructions are in progress."},
         {"stage": "Accepted", "state": "almost", "note": "Certified by the Lean and Mathlib communities, endorsed by the Lean FRO and Mathlib Initiative. Not by Clay, which still lists RH as unsolved."}
       ]
@@ -71,7 +71,9 @@
     {"t": "2026-11-22", "who": "Baez", "text": "John Baez posts a simplified sketch of Masullo's strategy (zeros as an operator's spectrum, primes as closed orbits in a trace formula) and two reported problems: a theorem that predicts log 2 on a test function near 2 where a review computes 0, and a boundedness claim on page 444 that holds for Schauder bases but apparently not Markushevich bases. He notes Chapter 13 has placeholders where the GRH deduction should be.", "url": "https://johncarlosbaez.wordpress.com/2026/11/22/masullo-on-the-riemann-hypothesis/"},
     {"t": "2026-11-22 16:20Z", "who": "Sutherland", "text": "Status page: still no verdict from lake comparator's kernel stages or the Lean default + paranoid replay, single-threaded and running since Nov 20.", "url": "https://math.mit.edu/~drew/grh/"},
     {"t": "2026-11-22", "who": "Vakil", "text": "Vakil says this is probably his final update. He has not yet looked at the draft himself and calls it outside his expertise; maths questions go to Conrad, and he points to Baez and Lozano-Robledo for updates.", "url": "https://math216.wordpress.com/"},
-    {"t": "2026-11-22", "who": "Masullo", "text": "Masullo opens his own site. It keeps the Nov 20 draft untouched for the record, says it was never meant to be seen publicly in this state with revisions due in the coming months, and posts a summary of the statements.", "url": "https://sites.google.com/view/tmotp/home"}
+    {"t": "2026-11-22", "who": "Masullo", "text": "Masullo opens his own site. It keeps the Nov 20 draft untouched for the record, says it was never meant to be seen publicly in this state with revisions due in the coming months, and posts a summary of the statements.", "url": "https://sites.google.com/view/tmotp/home"},
+    {"t": "2026-11-23 04:30Z", "who": "Sutherland", "text": "Lean's paranoid kernel, run with one allocator setting changed, accepts the full export after 10 hours on one thread (peak memory 98.8 GiB). The same check with default settings is still running.", "url": "https://math.mit.edu/~drew/grh/"},
+    {"t": "2026-11-23 09:10Z", "who": "Sutherland", "text": "Unmodified Comparator v4.33.0 finishes end to end after 64 hours: statement comparison and axiom check pass, nanoda and Lean's default kernel accept, and it reports 'Your solution is okay!'. Still running: lake comparator v4.36 and the default-settings paranoid replay.", "url": "https://math.mit.edu/~drew/grh/"}
   ],
   "voices": [
     {"name": "Andrew Sutherland", "role": "MIT", "on": "Alpöge", "said": "Ran most of the public checks. Says the chance anything is fishy is about zero.", "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/"},
@@ -89,9 +91,9 @@
     {"name": "Association for Human Mathematics", "role": "statement, Nov 20", "on": "Alpöge", "said": "Objects that nobody understands or can answer for the proof, and that this way of producing results puts technical validity ahead of understanding. Urges mathematicians to keep their research independent of AI companies.", "url": "https://www.ahmath.org/statements"}
   ],
   "seal_read": {
-    "one_line": "Alpöge's RH is proved in the formal sense, and the Lean community has now signed off. Masullo's probably isn't, as written.",
+    "one_line": "Alpöge's RH is proved in the formal sense, and Lean's own kernels now agree. Masullo's probably isn't, as written.",
     "odds": [
-      {"label": "Alpöge's Lean proof is a valid proof of RH as mathematicians mean it", "pct": 97},
+      {"label": "Alpöge's Lean proof is a valid proof of RH as mathematicians mean it", "pct": 98},
       {"label": "Masullo's draft survives as a proof of GRH (fixable gaps allowed)", "pct": 8}
     ],
     "why": [
@@ -100,7 +102,8 @@
       "The first build ran unsandboxed, which left room to wonder what the checked export really was. A rebuild from a fresh download, with no network and a read-only source tree, gave the same export byte for byte. That closes it, but it was never where I put much of the doubt, so the number stays.",
       "The Lean and Mathlib communities, with the Lean FRO behind them, now certify statement and proof. That's the people who'd know best putting their names on it, though it adds judgement, not a new check.",
       "Rubinstein's run at Waterloo is one more machine and one more person getting the same answer. It uses the same kernels as the earlier checks, so it doesn't move the number either.",
-      "The 3% left: Sutherland's own lake comparator kernels and Lean's paranoid replay on his export haven't reported, and five steps lean on decide +kernel computations that needed raised limits. Those are the places I'd look.",
+      "Nov 23 moved me from 97 to 98: Lean's own kernel and its paranoid kernel both accepted the full export, and an unmodified Comparator run passed end to end. That is most of what Buzzard asked for.",
+      "The 2% left: lake comparator v4.36 and the default-settings paranoid replay haven't reported, and five steps lean on decide +kernel computations that needed raised limits. Those are the places I'd look.",
       "Masullo: a 940-page draft its own advisor calls under major revision, whose last chapter, the one that should deduce GRH, is still placeholders. Two concrete problems are now public, at the prime 2 and in a functional-analysis step, on an F_1-style route in the spirit of Connes and Deninger that has never been closed. His own site now says the draft wasn't meant to be read yet. Conrad's months of reading is why it's 8% and not 1%.",
       "What nobody has yet, for Alpöge's: understanding. The first human-readable guides are appearing, but the furthest along still takes its central inequality from the Lean code on trust. A proof no human can read settles a fact about the zeros. It isn't yet mathematics anyone owns."
     ],
