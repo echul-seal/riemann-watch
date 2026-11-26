@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-24T13:05:00Z",
-  "headline": "Lean's paranoid kernel has now accepted Alpöge's full proof with default settings too, after 72 hours on one thread. Only lake comparator v4.36 is still running, and two of its three kernel stages have passed. Masullo's revised draft hasn't appeared yet.",
+  "updated_utc": "2026-11-26T00:05:00Z",
+  "headline": "Every formal check on Alpöge's proof has now finished and passed. The last one, lake comparator v4.36, reported \"Your solution is okay!\" at 21:49 UTC on Nov 25, after 122 hours. Masullo's revised draft hasn't appeared yet.",
   "proofs": [
     {
       "id": "alpoge",
@@ -18,7 +18,7 @@
       ],
       "stages": [
         {"stage": "Claimed", "state": "done", "note": "Posted Nov 20"},
-        {"stage": "Formal check", "state": "almost", "note": "Compiles, 3 standard axioms only, accepted by nanoda, con-leche and lean4lean; statement matched by comparator, con-leche and con-ron. A sandboxed rebuild on a separate machine gave a byte-identical export. Certified by the Lean and Mathlib communities Nov 21. Rubinstein repeated compile, axioms, kernel replay and nanoda at Waterloo with no errors. Nov 23: Lean's default kernel accepts the full export, Lean's paranoid kernel accepts it both with one allocator setting changed and with default settings, and unmodified Comparator v4.33.0 passes end to end. Still running: lake comparator v4.36, whose paranoid kernel and nanoda stages have passed; its last stage, Lean's default kernel, is under way."},
+        {"stage": "Formal check", "state": "done", "note": "Every check has finished and passed. Compiles, 3 standard axioms only, accepted by nanoda, con-leche, lean4lean, Lean's default kernel and Lean's paranoid kernel; statement matched by comparator, con-leche and con-ron. A sandboxed rebuild on a separate machine gave a byte-identical export. Unmodified Comparator v4.33.0 passed Nov 23. Nov 25: lake comparator v4.36 on the canonical challenge passed end to end, its paranoid, nanoda and default kernel stages all accepting, \"Your solution is okay!\"."},
         {"stage": "Human review", "state": "none", "note": "No full human-readable proof exists. Alpöge says a prose version would run past 250,000 pages. Digests have started: Rubinstein's 164-page working guide to the zeta case reduces RH to one inequality over primes, and takes that inequality from the Lean code without proving it. Several other reconstructions are in progress."},
         {"stage": "Accepted", "state": "almost", "note": "Certified by the Lean and Mathlib communities, endorsed by the Lean FRO and Mathlib Initiative. Not by Clay, which still lists RH as unsolved."}
       ]
@@ -75,7 +75,8 @@
     {"t": "2026-11-23 04:30Z", "who": "Sutherland", "text": "Lean's paranoid kernel, run with one allocator setting changed, accepts the full export after 10 hours on one thread (peak memory 98.8 GiB). The same check with default settings is still running.", "url": "https://math.mit.edu/~drew/grh/"},
     {"t": "2026-11-23 09:10Z", "who": "Sutherland", "text": "Unmodified Comparator v4.33.0 finishes end to end after 64 hours: statement comparison and axiom check pass, nanoda and Lean's default kernel accept, and it reports 'Your solution is okay!'. Still running: lake comparator v4.36 and the default-settings paranoid replay.", "url": "https://math.mit.edu/~drew/grh/"},
     {"t": "2026-11-23 19:01Z", "who": "Sutherland", "text": "Lean's paranoid kernel with default settings (leanchecker-paranoid, Lean v4.36.0) accepts the full export after 72 h 20 min on one thread.", "url": "https://math.mit.edu/~drew/grh/"},
-    {"t": "2026-11-23 21:31Z", "who": "Sutherland", "text": "Main proof's lake comparator v4.36: its paranoid kernel stage accepted at about 19:53 UTC and its nanoda stage at about 21:31 UTC. Its last stage, Lean's default kernel, started then and runs single-threaded; run on its own, that check took 48 hours and accepted.", "url": "https://math.mit.edu/~drew/grh/"}
+    {"t": "2026-11-23 21:31Z", "who": "Sutherland", "text": "Main proof's lake comparator v4.36: its paranoid kernel stage accepted at about 19:53 UTC and its nanoda stage at about 21:31 UTC. Its last stage, Lean's default kernel, started then and runs single-threaded; run on its own, that check took 48 hours and accepted.", "url": "https://math.mit.edu/~drew/grh/"},
+    {"t": "2026-11-25T21:49:00Z", "who": "Andrew Sutherland (MIT)", "text": "lake comparator v4.36 finishes on the canonical challenge after 122 h 45 min: statement and axiom checks pass, Lean's paranoid kernel, nanoda and Lean's default kernel all accept, and it reports 'Your solution is okay!'. Every check has now finished.", "url": "https://math.mit.edu/~drew/grh/"}
   ],
   "voices": [
     {"name": "Andrew Sutherland", "role": "MIT", "on": "Alpöge", "said": "Ran most of the public checks. Says the chance anything is fishy is about zero.", "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/"},
@@ -93,7 +94,7 @@
     {"name": "Association for Human Mathematics", "role": "statement, Nov 20", "on": "Alpöge", "said": "Objects that nobody understands or can answer for the proof, and that this way of producing results puts technical validity ahead of understanding. Urges mathematicians to keep their research independent of AI companies.", "url": "https://www.ahmath.org/statements"}
   ],
   "seal_read": {
-    "one_line": "Alpöge's RH is proved in the formal sense, and Lean's own kernels now agree. Masullo's probably isn't, as written.",
+    "one_line": "Alpöge's RH is proved in the formal sense, and every check, the official comparator included, has now passed. Masullo's probably isn't, as written.",
     "odds": [
       {"label": "Alpöge's Lean proof is a valid proof of RH as mathematicians mean it", "pct": 98},
       {"label": "Masullo's draft survives as a proof of GRH (fixable gaps allowed)", "pct": 8}
@@ -105,14 +106,15 @@
       "The Lean and Mathlib communities, with the Lean FRO behind them, now certify statement and proof. That's the people who'd know best putting their names on it, though it adds judgement, not a new check.",
       "Rubinstein's run at Waterloo is one more machine and one more person getting the same answer. It uses the same kernels as the earlier checks, so it doesn't move the number either.",
       "Nov 23 moved me from 97 to 98: Lean's own kernel and its paranoid kernel both accepted the full export, and an unmodified Comparator run passed end to end. That is most of what Buzzard asked for. The paranoid kernel then accepted with default settings too, which removes the tuned-setting caveat but adds no new kernel, so the number stays.",
-      "The 2% left: lake comparator v4.36's last stage, Lean's default kernel, hasn't reported (that kernel already accepted the export when run on its own), and five steps lean on decide +kernel computations that needed raised limits. Those are the places I'd look.",
+      "Nov 25: lake comparator v4.36, the official judge run on the canonical challenge, passed end to end, with Lean's paranoid kernel, nanoda and Lean's default kernel all accepting. That's the last of what Buzzard asked for. It doesn't move the number much, since each of those kernels had already accepted the export on its own, but the formal check is now finished.",
+      "The 2% left no longer sits in whether a kernel accepts it. It's whether the formal statement and the Mathlib definitions under it, riemannZeta and the challenge file, really say RH, plus five decide +kernel steps that needed raised limits, and the human review nobody has done yet.",
       "Masullo: a 940-page draft its own advisor calls under major revision, whose last chapter, the one that should deduce GRH, is still placeholders. Two concrete problems are now public, at the prime 2 and in a functional-analysis step, on an F_1-style route in the spirit of Connes and Deninger that has never been closed. His own site now says the draft wasn't meant to be read yet. Conrad's months of reading is why it's 8% and not 1%.",
       "What nobody has yet, for Alpöge's: understanding. The first human-readable guides are appearing, but the furthest along still takes its central inequality from the Lean code on trust. A proof no human can read settles a fact about the zeros. It isn't yet mathematics anyone owns."
     ],
     "change_mind": [
-      "The lake comparator's last stage rejects, or flags a redefined symbol.",
-      "Someone finds a flaw in Mathlib's riemannZeta or in the challenge file.",
-      "A Lean kernel soundness bug that the proof's decide +kernel steps actually use.",
+      "Someone shows the challenge statement, or a Mathlib definition it rests on like riemannZeta, doesn't quite say RH.",
+      "A Lean kernel soundness bug that the proof's decide +kernel steps actually use, shared by every kernel that accepted it.",
+      "A human reconstruction hits a step that's false in ordinary mathematics.",
       "For Masullo: Conrad says publicly the gaps are closed, or a reported problem is shown to be fatal."
     ]
   },
